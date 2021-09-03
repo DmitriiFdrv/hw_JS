@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>My Page</title>
+</head>
+
+<body>
+    <h2 id="div1">Some data in div-1</h2>
+    <h2 id="div2">Another data in div-2</h2>
+    <h2 id="div3">Anything else in div-3</h2>
+    <script>
+        function chess() {
+            let body = document.body;
+            let tbl = document.createElement('table');
+            let abc = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
+            tbl.style.width = '400px';
+            tbl.style.border = '2px solid black';
+
+            for (let i = 0; i < 8; i++) {
+                let row = tbl.insertRow();
+                for (let j = 0; j < 8; j++) {
+                    let cell = row.insertCell();
+
+                    cell.appendChild(document.createTextNode(`${i}..${j}`));
+                    cell.style.border = '2px solid black';
+                }
+            }
+            body.appendChild(tbl);
+        }
+
+        chess();
+    </script>
+
+
+</body>
+
+</html>
