@@ -2,23 +2,30 @@
 // Доска должна быть разлинована соответствующим образом, т.е. чередовать черные и белые ячейки. 
 //Строки должны нумероваться числами от 1 до 8, столбцы – латинскими буквами A, B, C, D, E, F, G, H.
 
-(function chessess() {
+function chessess() {
 
-    let tbl = document.querySelector('.chess');
-    let num = 0;
-    const black = '.chess-cell';
+    let chess = document.querySelector('.board');
+    let cell;
+    let flag = true;
 
     for (let i = 0; i < 8; i++) {
 
         for (let u = 0; u < 8; u++) {
+            if (u == 0) flag = !flag;
 
+            cell = document.createElement('div');
 
+            if (flag) cell.className = "cell black";
+            else cell.className = "cell white";
+
+            chess.appendChild(cell);
+            flag = !flag;
         }
     }
 
 }
 
-)();
+chessess();
 //
 //2. Заполнить созданную таблицу буквами, отвечающими за шахматную фигуру,
 //например К – король, Ф – ферзь и т.п., причем все фигуры должны стоять на своих местах и быть соответственно черными и белыми.
